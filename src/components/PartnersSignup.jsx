@@ -1551,4 +1551,4 @@ const PartnersSignup = () => {
     );
 };
 
-export default PatnersSignup;
+export default PartnersSignup;
