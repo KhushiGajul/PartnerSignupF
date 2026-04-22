@@ -566,7 +566,7 @@ const PartnersSignup = () => {
                 email: data.email
             };
 
-            const response = await axios.post("http://3.109.152.74/api/partners/register", payload, AUTH_CONFIG);
+            const response = await axios.post("/api/partners/register", payload, AUTH_CONFIG);
             
             if (response.status === 201 || response.status === 200) {
                 setMasterData(prev => ({ ...prev, ...data }));
@@ -599,7 +599,7 @@ const PartnersSignup = () => {
                 pan_no: data.pan
             };
 
-            await axios.put(`http://3.109.152.74/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
+            await axios.put(`/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
             
             setMasterData(prev => ({ ...prev, ...data }));
             alert("PAN Details synced!");
@@ -621,7 +621,7 @@ const PartnersSignup = () => {
                 euin_aprn: data.euinAprn || null
             };
 
-            await axios.put(`http://3.109.152.74/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
+            await axios.put(`/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
             
             setMasterData(prev => ({ ...prev, ...data }));
             setShowBankDetails(true);
@@ -648,7 +648,7 @@ const PartnersSignup = () => {
                 cin_no: finalBankData.cin_no
             };
 
-            await axios.put(`http://3.109.152.74/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
+            await axios.put(`/api/partners/update/${identifier}`, payload, AUTH_CONFIG);
             
             setMasterData(prev => ({ ...prev, ...finalBankData }));
             setShowAgreement(true);
